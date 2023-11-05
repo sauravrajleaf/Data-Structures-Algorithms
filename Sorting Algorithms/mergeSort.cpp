@@ -3,6 +3,12 @@
 
 // Problem Link - https://www.codingninjas.com/studio/problems/merge-sort_5846?utm_source=striver&utm_medium=website&utm_campaign=a_zcoursetuf&leftPanelTabValue=PROBLEM
 
+// Constraints :
+// 1 <= N <= 10^3
+// 0 <= ARR[i] <= 10^9
+
+// Merge sort using array
+
 #include <bits/stdc++.h>
 
 using namespace std;
