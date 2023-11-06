@@ -30,6 +30,7 @@ Worst Case Time complexity:  O(N^2)
 <Space Complexity> -> O(1) + O(N) auxiliary stack space. O(1), if we don’t consider the recursive stack space. If we consider the recursive stack space then, in the worst case quicksort could make O(N).
 ************************************************************************************************************************************************************************************
 <Problem Link> - https://www.codingninjas.com/studio/problems/quick-sort_5844?utm_source=striver&utm_medium=website&utm_campaign=a_zcoursetuf
+Status - Accepted
 ************************************************************************************************************************************************************************************
 <Constraints> :
 1 <= N <= 10^3

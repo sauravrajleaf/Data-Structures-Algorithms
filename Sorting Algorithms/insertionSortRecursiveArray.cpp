@@ -1,35 +1,80 @@
 /*
 ************************************************************************************************************************************************************************************
 <Title>
-Quick Sort using vector
+Recursive Insertion Sort using Array
 ************************************************************************************************************************************************************************************
 <Introduction>
-Quick Sort is a divide-and-conquer algorithm like the Merge Sort. But unlike Merge sort, this algorithm does not use any extra array for sorting(though it uses an auxiliary stack space). So, from that perspective, Quick sort is slightly better than Merge sort.
-
+Insertion sort is a simple sorting algorithm that works similar to the way you sort playing cards in your hands. The array is virtually split into a sorted and an unsorted part. Values from the unsorted part are picked and placed at the correct position in the sorted part.
 ************************************************************************************************************************************************************************************
 Time Complextiy ->
-The following recurrence relation can be written for Quick sort :
-F(n) = F(k) + F(n-1-k)
-Here k is the number of elements smaller or equal to the pivot and n-1-k denotes elements greater than the pivot.
 ************************************
-Average -> O(N*logN), where N = size of the array. Reason: At each step, we divide the whole array, for that logN and n steps are taken for the partition() function, so overall time complexity will be N*logN.
+Average -> O(N^2)
 ************************************
-Best ->
+Best -> O(N)
 ************************************
-Worst -> O(N^2) This case occurs when the pivot is the greatest or smallest element of the array. If the partition is done and the last element is the pivot, then the worst case would be either in the increasing order of the array or in the decreasing order of the array.
-Recurrence:
-F(n) = F(0)+F(n-1)  or  F(n) = F(n-1) + F(0)
-Worst Case Time complexity:  O(N^2)
+Worst -> O(N^2)
 ************************************************************************************************************************************************************************************
-Space Complexity ->
+Space Complexity ->O(N)
 ************************************************************************************************************************************************************************************
-Problem Link -
+Problem Link - https://www.codingninjas.com/studio/problems/insertion-sort_624381?utm_source=striver&utm_medium=website&utm_campaign=a_zcoursetuf
 Status - Accepted
 ************************************************************************************************************************************************************************************
 Constraints :
+0 <= N <= 10^3
+0 <= arr[i] <= 10^5
+Time Limit: 1 sec
 ************************************************************************************************************************************************************************************
 <Information Sources>
-https://takeuforward.org/data-structure/quick-sort-algorithm/
-https://www.geeksforgeeks.org/quick-sort/
+https://www.geeksforgeeks.org/insertion-sort/
 ************************************************************************************************************************************************************************************
 */
+
+#include <bits/stdc++.h>
+
+using namespace std;
+
+void insertionSortRecurs(int arr[], int n, int idx)
+{
+
+  if (idx == n)
+    return;
+
+  int j = idx; // element at position j will be placed at its correct position
+
+  while (j > 0 && arr[j - 1] > arr[j])
+  {
+    int temp = arr[j - 1];
+    arr[j - 1] = arr[j];
+    arr[j] = temp;
+    // swap(arr[j-1],arr[j]);
+    j--;
+  }
+  idx++;
+  return insertionSortRecurs(arr, n, idx);
+}
+
+void insertionSort(int arr[], int n)
+{
+  // write your code here
+
+  if (n <= 0)
+    return;
+  int idx = 0;
+  insertionSortRecurs(arr, n, idx);
+}
+
+int main()
+{
+  int arr[] = {10, 24, 1, 2, 0, 12, 2};
+
+  cout << "Before Sorting:" << endl;
+  for (int i = 0; i < 7; i++)
+    cout << arr[i] << "\t";
+  cout << endl;
+  insertionSort(arr, 7);
+
+  cout << "After Sorting:" << endl;
+  for (int i = 0; i < 7; i++)
+    cout << arr[i] << "\t";
+  cout << endl;
+}
