@@ -1,0 +1,34 @@
+/*
+************************************************************************************************************************************************************************************
+<Title>
+Quick Sort using vector
+************************************************************************************************************************************************************************************
+<Introduction>
+Quick Sort is a divide-and-conquer algorithm like the Merge Sort. But unlike Merge sort, this algorithm does not use any extra array for sorting(though it uses an auxiliary stack space). So, from that perspective, Quick sort is slightly better than Merge sort.
+
+************************************************************************************************************************************************************************************
+Time Complextiy ->
+The following recurrence relation can be written for Quick sort :
+F(n) = F(k) + F(n-1-k)
+Here k is the number of elements smaller or equal to the pivot and n-1-k denotes elements greater than the pivot.
+************************************
+Average -> O(N*logN), where N = size of the array. Reason: At each step, we divide the whole array, for that logN and n steps are taken for the partition() function, so overall time complexity will be N*logN.
+************************************
+Best ->
+************************************
+Worst -> O(N^2) This case occurs when the pivot is the greatest or smallest element of the array. If the partition is done and the last element is the pivot, then the worst case would be either in the increasing order of the array or in the decreasing order of the array.
+Recurrence:
+F(n) = F(0)+F(n-1)  or  F(n) = F(n-1) + F(0)
+Worst Case Time complexity:  O(N^2)
+************************************************************************************************************************************************************************************
+Space Complexity ->
+************************************************************************************************************************************************************************************
+Problem Link -
+************************************************************************************************************************************************************************************
+Constraints :
+************************************************************************************************************************************************************************************
+<Information Sources>
+https://takeuforward.org/data-structure/quick-sort-algorithm/
+https://www.geeksforgeeks.org/quick-sort/
+************************************************************************************************************************************************************************************
+*/
