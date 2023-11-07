@@ -88,6 +88,7 @@ int partition(vector<int> &arr, int low, int high)
 
 void qs(vector<int> &arr, int low, int high)
 {
+  // To check if more than one element exists in the array
   if (low < high)
   {
     int pIndex = partition(arr, low, high);
