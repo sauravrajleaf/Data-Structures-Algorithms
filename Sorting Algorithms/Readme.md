@@ -2,7 +2,7 @@
 
 #### Selection Sort
 
-- **Status:** Left to implement
+- **Status:** Implemented (Iterative on Array)
 
 #### Bubble Sort
 
@@ -10,7 +10,7 @@
 
 #### Insertion Sort
 
-- **Status:** Implemented (Recursive on Array)
+- **Status:** Implemented (Iterative and Recursive on Array)
 
 #### Merge Sort
 
