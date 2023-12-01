@@ -25,6 +25,7 @@ then the auxiliary space will be O(logN).
 Problem Link -
 https://leetcode.com/problems/binary-search/https://www.codingninjas.com/studio/problems/traffic_6682625?utm_source=striver&utm_medium=website&utm_campaign=a_zcoursetuf&leftPanelTabValue=PROBLEM
 https://leetcode.com/discuss/interview-question/1322500/5-variations-of-Binary-search-(A-Self-Note)
+https://www.codingninjas.com/studio/problems/binary-search_972?utm_source=striver&utm_medium=website&utm_campaign=a_zcoursetuf
 
 More questions in the attached information sources links
 ************************************************************************************************************************************************************************************
