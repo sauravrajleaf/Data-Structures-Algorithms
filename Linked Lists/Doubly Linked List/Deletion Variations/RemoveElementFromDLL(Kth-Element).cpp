@@ -85,53 +85,59 @@ Node* deleteTail(Node* head) {
 }
 
 
+// Function to remove the Kth element of a doubly linked list
 Node* removeKthElement(Node* head, int position) {
-  
-  if(head == NULL) {
-    return NULL;
+  // Check if the linked list is empty
+  if (head == nullptr) {
+    return nullptr;
   }
 
+  // Temporary pointer to traverse the linked list
   Node* kNode = head;
 
   int cnt = 0;
 
-  while(kNode) {
+  // Traverse to the Kth element
+  while (kNode) {
     cnt++;
 
-    if(cnt == position) {
+    if (cnt == position) {
       break;
     }
 
-    kNode =  kNode->next;
+    kNode = kNode->next;
   }
 
+  // Save the previous and next nodes of the Kth element
   Node* prevElNode = kNode->prev;
   Node* nextElNode = kNode->next;
 
-  if(prevElNode == NULL && nextElNode == NULL) {
-    return NULL;
-  }
-  else if(prevElNode == NULL) {
-    //delete head
-     return deleteHead(head);
-    
-  }else if (nextElNode == NULL) {
-    //delete tail
+  // Check if the Kth element is the only element in the list
+  if (prevElNode == nullptr && nextElNode == nullptr) {
+    return nullptr;
+  } else if (prevElNode == nullptr) {
+    // If Kth element is the head, delete head
+    return deleteHead(head);
+  } else if (nextElNode == nullptr) {
+    // If Kth element is the tail, delete tail
     return deleteTail(head);
   }
 
+  // Update the next pointer of the previous node to skip the Kth element
   prevElNode->next = nextElNode;
+  // Update the prev pointer of the next node to skip the Kth element
   nextElNode->prev = prevElNode;
 
+  // Update the prev and next pointers of the Kth element to nullptr
   kNode->prev = nullptr;
   kNode->next = nullptr;
 
+  // Delete the Kth element to free up memory
   delete kNode;
 
+  // Return the head of the updated linked list
   return head;
- 
 }
-
 
 
 // Function to print the elements of the doubly linked list
@@ -174,7 +180,7 @@ int main() {
 
   // Convert the array to a doubly linked list
   Node* head = convertArr2DLL(arr);
-  int k = 4;
+  int k = 5;
 
   cout << "Linked List before removing Kth element "<< k << endl;
   print(head);
