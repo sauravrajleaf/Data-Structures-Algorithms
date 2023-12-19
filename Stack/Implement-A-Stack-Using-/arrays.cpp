@@ -101,9 +101,9 @@ int main() {
 
     s.push(40); 
     s.push(50); 
+
+    
     cout<<"Elements present in the stack"<<endl;
-
-
     //Printing all the elements present in the stack
     while(!s.isEmpty()) {
 

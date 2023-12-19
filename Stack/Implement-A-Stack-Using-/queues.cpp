@@ -1,3 +1,10 @@
+// Implementing a stack using queues in C++ can be an interesting exercise. 
+// A stack is a Last-In-First-Out (LIFO) structure, whereas a queue is a First-In-First-Out (FIFO) structure. 
+// To simulate the behavior of a stack using queues, we need to manage the order of elements appropriately.
+
+// One common approach is to use two queues. The key idea is to use one queue as the primary storage and 
+// the other to help with the push operation. Here's a basic implementation:
+
 #include<bits/stdc++.h>
 
 using namespace std;
